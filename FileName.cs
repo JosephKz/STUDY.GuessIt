@@ -38,7 +38,7 @@ namespace STUDY.GuessIt
             string play = escolhaLower.Contains("play") ? $"{fraseEscolhida} play" : "";
          
 
-            List<string> escolhaLista = new List<string> { dance, play, nothing }; //-- armazena as escolhas em uma lista
+            List<string> escolhaLista = new List<string> { dance, play }; //-- armazena as escolhas em uma lista
 
             foreach (string g in escolhaLista)
             {
