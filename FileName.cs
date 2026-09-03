@@ -34,8 +34,15 @@ namespace STUDY.GuessIt
             string escolha = Console.ReadLine()!;
             string escolhaLower = escolha.ToLower(); // escolha em lower
 
-            string dance = escolhaLower.Contains("dance") ? $"{fraseEscolhida} dance" : "";
-            string play = escolhaLower.Contains("play") ? $"{fraseEscolhida} play" : "";
+            string dance = escolhaLower.Contains("dance") ||
+            escolhaLower.Contains("party") ||
+            escolhaLower.Contains("balada") ||
+            escolhaLower.Contains("rave") ? $"{fraseEscolhida} dance" : "";
+
+            string play = escolhaLower.Contains("play") ||
+            escolhaLower.Contains("game") || 
+            escolhaLower.Contains("steam") || 
+            escolhaLower.Contains("pleisteixon")? $"{fraseEscolhida} play" : "";
          
 
             List<string> escolhaLista = new List<string> { dance, play }; //-- armazena as escolhas em uma lista
@@ -45,6 +52,13 @@ namespace STUDY.GuessIt
                 if (g != "")
                 {
                     Console.WriteLine(g);
+                    break;
+                }
+
+                else if(dance == "" && play == "")
+                {
+                    Console.WriteLine("Buro dms faz nada kkkk");
+                    break;
                 }
             }
         }
